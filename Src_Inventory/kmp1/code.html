@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Krishna Motor Parts</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#D71920", // Adjusted to Premium Red
+              "primary-hover": "#B01217", // Darker Red for hover
+              "secondary-green": "#059669", // Deep Emerald for subtle status indicators
+              "metal-silver": "#E5E7EB", // Light Gray for text on dark bg
+              "charcoal": "#1F2937",
+              "background-light": "#F9FAFB", // Neutral Light
+              "background-dark": "#030712", // Deep Neutral Dark (removed green tint)
+              "surface-dark": "#111827", // Neutral Dark Surface
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            backgroundImage: {
+                // Neutral/Cool dark gradient instead of green
+                'hero-gradient': 'linear-gradient(rgba(3, 7, 18, 0.85), rgba(3, 7, 18, 0.95))',
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased transition-colors duration-300">
+<header class="fixed top-0 left-0 right-0 z-50 px-4 py-4 md:px-6">
+<div class="mx-auto max-w-7xl">
+<nav class="relative flex items-center justify-between rounded-full border border-white/10 bg-surface-dark/90 backdrop-blur-md px-6 py-3 shadow-lg">
+<div class="flex items-center gap-2">
+<div class="flex size-8 items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-xl">settings</span>
+</div>
+<span class="text-lg font-bold tracking-tight text-white">Krishna<span class="text-primary">Motor</span>Parts</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-metal-silver transition-colors hover:text-primary" href="#">Home</a>
+<a class="text-sm font-medium text-metal-silver transition-colors hover:text-primary" href="#about">About Us</a>
+<a class="text-sm font-medium text-metal-silver transition-colors hover:text-primary" href="#products">Products</a>
+<a class="text-sm font-medium text-metal-silver transition-colors hover:text-primary" href="#services">Services</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-2 text-sm font-bold text-white transition-all hover:bg-primary-hover hover:shadow-[0_0_15px_rgba(215,25,32,0.4)]">
+<span>Shop Now</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="flex md:hidden items-center justify-center text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+</div>
+</header>
+<section class="relative flex min-h-screen w-full items-center justify-center pt-24 pb-12 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="h-full w-full bg-cover bg-center" data-alt="Close up of a polished metallic car engine component" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAR99SdQgUGyps3PboVssdNJA2gxJIQp1uTREYcBIwWakRbg9xrfjc3p6B-jK0nZFKVp4YrcFobgrze2QtnH9ZPgBI13LOsD-SucBJEGmE3V9c6-QxP23h-C49Pa5ER27EqKhPmjMOjjNZUd1teKOn3Zf2QzDuUuE7wgZnR79OAMNCTIJh36OCMT5-_VBo9rhsarbd6-zgYDZJxehYaImw2qT8rRfC6n43VUOuIe5KGNPdlVAnvyb26AFbcpFP0uCibVtPSf0yG2Qx3');"></div>
+<div class="absolute inset-0 bg-hero-gradient"></div>
+</div>
+<div class="relative z-10 w-full px-4 md:px-6">
+<div class="mx-auto max-w-7xl">
+<div class="grid gap-12 lg:grid-cols-2 items-center">
+<div class="flex flex-col gap-6">
+<div class="inline-flex w-fit items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm">
+<span class="flex size-2 rounded-full bg-secondary-green animate-pulse"></span>
+<span class="text-xs font-bold uppercase tracking-wide text-primary">Authorized Distributor</span>
+</div>
+<h1 class="text-5xl font-black leading-[1.1] tracking-tight text-white md:text-6xl lg:text-7xl">
+                            PRECISION PARTS <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-white">PEAK PERFORMANCE</span>
+</h1>
+<p class="max-w-xl text-lg text-metal-silver/80">
+                            Your one-stop destination for genuine automotive spares. From high-performance lubricants to precision engine components, we ensure your vehicle runs like new.
+                        </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="flex h-12 min-w-[140px] items-center justify-center rounded-full bg-primary px-6 text-base font-bold text-white transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(215,25,32,0.5)]">
+                                Browse Catalog
+                            </button>
+<button class="flex h-12 min-w-[140px] items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 text-base font-bold text-white backdrop-blur-sm transition-all hover:bg-white/10">
+<span class="material-symbols-outlined">call</span>
+                                Contact Sales
+                            </button>
+</div>
+<div class="mt-8 flex items-center gap-8 border-t border-white/10 pt-8">
+<div>
+<p class="text-2xl font-bold text-white">5k+</p>
+<p class="text-sm text-metal-silver/60">Parts in Stock</p>
+</div>
+<div class="h-8 w-px bg-white/10"></div>
+<div>
+<p class="text-2xl font-bold text-white">13+</p>
+<p class="text-sm text-metal-silver/60">Years Excellence</p>
+</div>
+<div class="h-8 w-px bg-white/10"></div>
+<div>
+<p class="text-2xl font-bold text-white">100%</p>
+<p class="text-sm text-metal-silver/60">Genuine Parts</p>
+</div>
+</div>
+</div>
+<div class="relative hidden lg:block">
+<div class="absolute -inset-4 rounded-full bg-primary/20 blur-3xl"></div>
+<div class="relative aspect-square w-full max-w-lg mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+<img class="h-full w-full object-cover" data-alt="Detailed close up of metal gears and automotive machinery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_Ej631c6x_3buDDX3YL90gEj5Z7fRJRarlCrsciutk30n8zQeLIUdl5EI9UEM0bzhNOHkovwY1DQJ_eyJvZUGK6DNWuv2EKA288PF-czLyjt37opk84Hl-zhFzBrk0oEDkTTnPN-STahMGgPkyOExZlbWsclDpBLhD-nKMwnLlsg-jjOx5_DvGm48uRg0eQ5DfdDQQOEiCY8eR0EN_C9Ph25F0DUTkEwn5OafTrzflzqEA52SlO0czEZaqxCy8mAT7EYqfkJOj1Tu"/>
+</div>
+<div class="absolute -bottom-8 -left-8 rounded-2xl border border-white/10 bg-charcoal/90 p-4 backdrop-blur-md shadow-xl">
+<div class="flex items-center gap-3">
+<div class="flex size-10 items-center justify-center rounded-full bg-secondary-green/20 text-secondary-green">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="text-sm font-bold text-white">Official Partner</p>
+<p class="text-xs text-metal-silver/60">Castrol &amp; Bosch</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="w-full border-y border-white/5 bg-black py-8">
+<div class="mx-auto flex max-w-7xl flex-wrap justify-center gap-8 px-6 opacity-60 grayscale transition-all hover:opacity-100 hover:grayscale-0 md:justify-between">
+<div class="flex items-center gap-2 text-xl font-bold text-white font-display"><span class="material-symbols-outlined text-primary">water_drop</span> Castrol</div>
+<div class="flex items-center gap-2 text-xl font-bold text-white font-display"><span class="material-symbols-outlined text-blue-500">bolt</span> BOSCH</div>
+<div class="flex items-center gap-2 text-xl font-bold text-white font-display"><span class="material-symbols-outlined text-yellow-500">tire_repair</span> MICHELIN</div>
+<div class="flex items-center gap-2 text-xl font-bold text-white font-display"><span class="material-symbols-outlined text-red-500">car_repair</span> TOYOTA</div>
+<div class="flex items-center gap-2 text-xl font-bold text-white font-display"><span class="material-symbols-outlined text-gray-400">engineering</span> 3M Auto</div>
+</div>
+</div>
+<section class="py-20 px-4 md:px-6 bg-background-light dark:bg-background-dark" id="products">
+<div class="mx-auto max-w-7xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div class="max-w-2xl">
+<h2 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white md:text-4xl">Explore Our Categories</h2>
+<p class="mt-4 text-slate-600 dark:text-metal-silver/70">Find exactly what you need from our extensive inventory of premium spare parts.</p>
+</div>
+<a class="flex items-center gap-2 text-sm font-bold text-primary hover:text-primary-hover transition-colors" href="#">
+                    View Full Catalog <span class="material-symbols-outlined text-lg">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark p-4 shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/30">
+<div class="aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-black/20">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Bottles of motor oil and lubricants" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBa8SPr50MN030ZwU8xhoD-NV1aH9VOqWvoYwtjPa8MfxJwqkrawUk6L7oP2MjCA1z7UguuaPOiO3f_tkcmauxzHN-WJn_e2mfoCeapIRtx0spG4rVSUlxuMO08HonsQPjAh4FFx-y1YcYLbudUNKJs3VTryBt_6YGHI_dZNHJbfiA_gMC8UOdxrXtvkz-ipz0lmBjIXuB_LUhR1IwiZhLWL3Zj0zdUG3kAV1HKAFn0FERKbvJ_xOuT-MTP9RFruygKFv12FR9ry0rO');"></div>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Lubricants</h3>
+<p class="text-xs text-slate-500 dark:text-gray-400">Oils, Fluids &amp; Greases</p>
+</div>
+<div class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary opacity-0 transition-opacity group-hover:opacity-100">
+<span class="material-symbols-outlined">arrow_outward</span>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark p-4 shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/30">
+<div class="aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-black/20">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Car disc brake rotor and caliper" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCm_PSHmi_PxKZaNu9hryt6wdoNFtqJ1O4hfqTI4WAa7pvmRYQ1OUpCAH_U7j4JcuagOwE62iJhPoraEPIdRVLAIKV7sKaF19evqfnd4KOFNdBhrh1IFCJ1vhB3j0_9SZqeAFDc4-LTPM42BfMFs9TQ62qC8CI-dnicT3EtAMmcUUw9AeDjTj4RbzWfmhlqcqcsHrNg6DzlgqhCHeXpI3L6TTN03KHf0OiGudKshM6A9k5IPdPz8iYSNxN4vKRd8-tp2vQn9IktLTdI');"></div>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Braking</h3>
+<p class="text-xs text-slate-500 dark:text-gray-400">Pads, Discs &amp; Calipers</p>
+</div>
+<div class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary opacity-0 transition-opacity group-hover:opacity-100">
+<span class="material-symbols-outlined">arrow_outward</span>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark p-4 shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/30">
+<div class="aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-black/20">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Modern car engine bay detail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtOmpjtpW1gvbK-qfxhp8jVVUHvZWsDY9SWbuxwHxY_vwRthKaQ4kulAXmo2GAWzsgaJ46RZd_UrlHVf6BWbH52FNujPlf7U9Arpc0z6aZDHS60xdpRashOXXKJ6_WPaTry0IR_5feTKh2cvuWQq-2m2YfhwS_nijlZzF_vPeeSQ8CYO7rfSFwDZB-rD1u_AlIcbxkrgKc3t4XfhYwJjuIu_NFvj2HVZK4CS8fReKgI2RhYmKQFX0dBhW_sUJ3eOiZQ3VZ1XL39bbA');"></div>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Engine</h3>
+<p class="text-xs text-slate-500 dark:text-gray-400">Filters, Belts &amp; Plugs</p>
+</div>
+<div class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary opacity-0 transition-opacity group-hover:opacity-100">
+<span class="material-symbols-outlined">arrow_outward</span>
+</div>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-2xl bg-white dark:bg-surface-dark p-4 shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/30">
+<div class="aspect-[4/3] w-full overflow-hidden rounded-xl bg-gray-100 dark:bg-black/20">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Car headlights and accessories" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6_Awi7bbC2ePJdvKPaPfXAfxnqgkPKjPUKi_tU9ryVWmpeZcgcekruFuK4Ejx_Mf8C48sdw5s3zU-hC08jWtkJylWhea7_RqLSiuystiC6aYZEUwz2s4UozTiTSf7KvQwit_qteIppAmOnRBDTX9a0i2NtwovEz_zxLUh3MLNt2kdqqe_rs2x9gxoVLAMjSb46fD6MXsvfUBVEvH9K1otWsB-AGVfimODFXeqRGv6gQcjUo6-WTe_bFt2fYJza7tPgT4S1qMjCmLj');"></div>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Electrical</h3>
+<p class="text-xs text-slate-500 dark:text-gray-400">Batteries, Lights &amp; Sensors</p>
+</div>
+<div class="flex size-10 items-center justify-center rounded-full bg-primary/10 text-primary opacity-0 transition-opacity group-hover:opacity-100">
+<span class="material-symbols-outlined">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 px-4 md:px-6 bg-surface-dark relative overflow-hidden" id="services">
+<div class="absolute top-0 right-0 h-96 w-96 rounded-full bg-primary/5 blur-[100px]"></div>
+<div class="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-secondary-green/5 blur-[80px]"></div>
+<div class="mx-auto max-w-7xl relative z-10">
+<div class="grid lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
+<div class="size-12 rounded-full bg-primary/20 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined text-2xl">local_shipping</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Express Delivery</h3>
+<p class="text-sm text-metal-silver/70">Same-day dispatch for orders placed before 2 PM. We understand your urgency.</p>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
+<div class="size-12 rounded-full bg-secondary-green/20 flex items-center justify-center text-secondary-green mb-4">
+<span class="material-symbols-outlined text-2xl">workspace_premium</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Quality Guarantee</h3>
+<p class="text-sm text-metal-silver/70">100% genuine parts sourced directly from manufacturers with warranty support.</p>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
+<div class="size-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
+<span class="material-symbols-outlined text-2xl">support_agent</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Expert Support</h3>
+<p class="text-sm text-metal-silver/70">Not sure which part fits? Our mechanics are just a call away to help you.</p>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
+<div class="size-12 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-400 mb-4">
+<span class="material-symbols-outlined text-2xl">handshake</span>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">B2B Wholesale</h3>
+<p class="text-sm text-metal-silver/70">Special pricing and credit terms for garage owners and fleet managers.</p>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 flex flex-col gap-6">
+<h2 class="text-3xl font-black text-white md:text-5xl tracking-tight">
+                        SERVICE BEYOND <br/>
+<span class="text-primary">JUST SELLING PARTS</span>
+</h2>
+<p class="text-lg text-metal-silver/80">
+                        At Krishna Motor Parts, we don't just hand you a box. We provide the expertise and reliability you need to keep your vehicles on the road. Whether you are a DIY enthusiast or a professional mechanic, our ecosystem is built to support your success.
+                    </p>
+<div class="pt-4">
+<button class="group flex items-center gap-3 text-white font-bold hover:text-primary transition-colors">
+                            Explore Services
+                            <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 px-4 md:px-6 bg-background-light dark:bg-background-dark" id="about">
+<div class="mx-auto max-w-7xl">
+<div class="overflow-hidden rounded-[2.5rem] bg-surface-dark relative">
+<div class="absolute top-0 right-0 w-2/3 h-full bg-black skew-x-12 translate-x-32 z-0 hidden lg:block"></div>
+<div class="relative z-10 flex flex-col lg:flex-row items-center">
+<div class="p-8 md:p-12 lg:w-1/2 flex flex-col gap-6">
+<div class="inline-block px-3 py-1 rounded-full bg-white/10 border border-white/10 text-xs font-medium text-white w-fit">Since 2010</div>
+<h2 class="text-3xl md:text-4xl font-bold text-white">Driving Excellence in Automotive Spares</h2>
+<p class="text-metal-silver/80 leading-relaxed">
+                            Krishna Motor Parts started as a small shop with a big vision: to eliminate the hassle of finding genuine spare parts. Over a decade later, we have grown into a trusted distributor partnering with global giants like Castrol, Bosch, and more.
+                        </p>
+<p class="text-metal-silver/80 leading-relaxed">
+                             Our mission is simple: keep your engine running smooth, safe, and efficient.
+                        </p>
+<button class="mt-4 w-fit rounded-full bg-white text-slate-900 px-6 py-3 text-sm font-bold transition hover:bg-gray-200">
+                            Read Our Story
+                        </button>
+</div>
+<div class="w-full lg:w-1/2 h-80 lg:h-[500px] relative">
+<div class="absolute inset-0 h-full w-full bg-cover bg-center" data-alt="Shelves stocked with automotive parts in a modern warehouse" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4Jso-oG3LrofXKncjMT45MAYVFq0PtcG14Hw4a7EQRnKgXuJuGQ3Lh_C3JvwGsvYFuKdWnQLsT6UstwQaWTvTDyj9gI7H7h1ocTFp5E1zztoooEEWBuymdzgQQ5-twNOY4QVijYZvzZ1L_IaaDEuiwj2Ydv8dwfEk63yJoWBJiHzXjiFFhlgixFHvs2iX6-EtCSDjMyXm6nRAtHG38COEy3ttdBBc8rolo-_WYyEFTYRBUbbShIWgQBUH3YrxU7Wp3qewbKQ1n_dF');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark lg:from-transparent to-transparent opacity-80 lg:hidden"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 px-4 md:px-6">
+<div class="mx-auto max-w-4xl text-center">
+<h2 class="text-3xl font-black text-slate-900 dark:text-white md:text-5xl mb-6">Ready to Rev Up?</h2>
+<p class="text-slate-600 dark:text-metal-silver/70 mb-8 max-w-2xl mx-auto">Join our newsletter to get exclusive deals on parts, maintenance tips, and new product alerts directly to your inbox.</p>
+<form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+<input class="flex-1 rounded-full border border-gray-300 dark:border-white/10 bg-white dark:bg-white/5 px-6 py-3 text-slate-900 dark:text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Enter your email address" type="email"/>
+<button class="rounded-full bg-primary hover:bg-primary-hover text-white font-bold px-8 py-3 transition-colors shadow-lg shadow-primary/25" type="button">
+                    Subscribe
+                </button>
+</form>
+</div>
+</section>
+<footer class="bg-charcoal pt-16 pb-8 px-4 md:px-6 border-t border-white/5">
+<div class="mx-auto max-w-7xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="flex size-8 items-center justify-center rounded-full bg-primary text-white">
+<span class="material-symbols-outlined text-xl">settings</span>
+</div>
+<span class="text-lg font-bold text-white">Krishna<span class="text-primary">Motor</span>Parts</span>
+</div>
+<p class="text-sm text-gray-400">Your trusted partner for genuine automotive components and accessories.</p>
+<div class="flex gap-4 mt-2">
+<a class="text-gray-400 hover:text-white transition" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-gray-400 hover:text-white transition" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Quick Links</h4>
+<ul class="flex flex-col gap-3 text-sm text-gray-400">
+<li><a class="hover:text-primary transition" href="#">Home</a></li>
+<li><a class="hover:text-primary transition" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition" href="#">Shop Products</a></li>
+<li><a class="hover:text-primary transition" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Categories</h4>
+<ul class="flex flex-col gap-3 text-sm text-gray-400">
+<li><a class="hover:text-primary transition" href="#">Engine Oils</a></li>
+<li><a class="hover:text-primary transition" href="#">Brake Pads</a></li>
+<li><a class="hover:text-primary transition" href="#">Filters</a></li>
+<li><a class="hover:text-primary transition" href="#">Accessories</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Contact Us</h4>
+<ul class="flex flex-col gap-4 text-sm text-gray-400">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary shrink-0">location_on</span>
+<span>123 Auto Market Road,<br/>Industrial Area, City - 560001</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary shrink-0">call</span>
+<span>+91 98765 43210</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary shrink-0">mail</span>
+<span>sales@krishnamotors.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+<p>© 2024 Krishna Motor Parts. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

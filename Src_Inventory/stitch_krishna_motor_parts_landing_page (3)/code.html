@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Krishna Motor Parts</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#D71920", 
+              "primary-hover": "#B01217", 
+              "secondary-green": "#059669", 
+              "metal-silver": "#6B7280","charcoal": "#1F2937",
+              "background-light": "#F8FAFC",},
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            backgroundImage: {
+                'hero-gradient': 'linear-gradient(to right, rgba(248, 250, 252, 0.95), rgba(248, 250, 252, 0.8))',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+    .glass {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    }
+    .glass-card {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.5));
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+    }
+    .glass-nav {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    }
+    .glass-strong {
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px solid rgba(255, 255, 255, 1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+</style>
+</head>
+<body class="bg-background-light font-display text-slate-900 antialiased transition-colors duration-300">
+<div class="fixed top-[-20%] left-[-10%] h-[600px] w-[600px] rounded-full bg-primary/10 blur-[120px] pointer-events-none z-0"></div>
+<div class="fixed bottom-[-20%] right-[-10%] h-[700px] w-[700px] rounded-full bg-secondary-green/10 blur-[120px] pointer-events-none z-0"></div>
+<header class="fixed top-0 left-0 right-0 z-50 px-4 py-6 md:px-8">
+<div class="mx-auto max-w-7xl">
+<nav class="glass-nav relative flex items-center justify-between rounded-full px-8 py-4 shadow-sm border border-white/40">
+<div class="flex items-center gap-3">
+<div class="flex size-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-hover text-white shadow-lg ring-2 ring-white/50">
+<span class="material-symbols-outlined text-xl">settings</span>
+</div>
+<span class="text-xl font-bold tracking-tight text-slate-900">Krishna<span class="text-primary">Motor</span>Parts</span>
+</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-sm font-semibold text-slate-600 transition-all hover:text-primary" href="#">Home</a>
+<a class="text-sm font-semibold text-slate-600 transition-all hover:text-primary" href="#about">About Us</a>
+<a class="text-sm font-semibold text-slate-600 transition-all hover:text-primary" href="#products">Products</a>
+<a class="text-sm font-semibold text-slate-600 transition-all hover:text-primary" href="#services">Services</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary to-primary-hover px-6 py-2.5 text-sm font-bold text-white transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(215,25,32,0.3)] shadow-md">
+<span>Shop Now</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="flex md:hidden items-center justify-center text-slate-900 p-2 rounded-full glass hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+</div>
+</header>
+<section class="relative flex min-h-screen w-full items-center justify-center pt-32 pb-16 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="h-full w-full bg-cover bg-center opacity-30" data-alt="Close up of a polished metallic car engine component" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAR99SdQgUGyps3PboVssdNJA2gxJIQp1uTREYcBIwWakRbg9xrfjc3p6B-jK0nZFKVp4YrcFobgrze2QtnH9ZPgBI13LOsD-SucBJEGmE3V9c6-QxP23h-C49Pa5ER27EqKhPmjMOjjNZUd1teKOn3Zf2QzDuUuE7wgZnR79OAMNCTIJh36OCMT5-_VBo9rhsarbd6-zgYDZJxehYaImw2qT8rRfC6n43VUOuIe5KGNPdlVAnvyb26AFbcpFP0uCibVtPSf0yG2Qx3');"></div>
+<div class="absolute inset-0 bg-hero-gradient"></div>
+</div>
+<div class="relative z-10 w-full px-4 md:px-8">
+<div class="mx-auto max-w-7xl">
+<div class="grid gap-16 lg:grid-cols-2 items-center">
+<div class="flex flex-col gap-8">
+<div class="glass-strong inline-flex w-fit items-center gap-3 rounded-full px-5 py-2 shadow-sm border border-slate-200">
+<span class="relative flex size-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-green opacity-75"></span>
+<span class="relative inline-flex rounded-full size-3 bg-secondary-green shadow-[0_0_10px_#059669]"></span>
+</span>
+<span class="text-xs font-bold uppercase tracking-wider text-slate-800">Authorized Distributor</span>
+</div>
+<h1 class="text-6xl font-black leading-[1.05] tracking-tight text-slate-900 md:text-7xl lg:text-8xl">
+                            PRECISION PARTS <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-red-600 to-slate-900 filter">PEAK PERF.</span>
+</h1>
+<p class="max-w-xl text-xl text-slate-600 font-medium">
+                            Your one-stop destination for genuine automotive spares. From high-performance lubricants to precision engine components, we ensure your vehicle runs like new.
+                        </p>
+<div class="flex flex-wrap gap-5 pt-2">
+<button class="flex h-14 min-w-[160px] items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary-hover px-8 text-lg font-bold text-white transition-all hover:scale-105 hover:shadow-[0_0_25px_rgba(215,25,32,0.4)] shadow-xl">
+                                Browse Catalog
+                            </button>
+<button class="glass-strong flex h-14 min-w-[160px] items-center justify-center gap-3 rounded-full px-8 text-lg font-bold text-slate-800 transition-all hover:bg-white hover:shadow-lg border border-slate-200">
+<span class="material-symbols-outlined text-primary">call</span>
+                                Contact Sales
+                            </button>
+</div>
+<div class="mt-10 flex items-center gap-10 border-t border-slate-200 pt-10 backdrop-blur-sm rounded-3xl p-4 bg-white/40 w-fit shadow-sm">
+<div>
+<p class="text-3xl font-black text-slate-900">5k+</p>
+<p class="text-sm font-semibold text-slate-500">Parts in Stock</p>
+</div>
+<div class="h-10 w-px bg-slate-300"></div>
+<div>
+<p class="text-3xl font-black text-slate-900">13+</p>
+<p class="text-sm font-semibold text-slate-500">Years Excellence</p>
+</div>
+<div class="h-10 w-px bg-slate-300"></div>
+<div>
+<p class="text-3xl font-black text-slate-900">100%</p>
+<p class="text-sm font-semibold text-slate-500">Genuine Parts</p>
+</div>
+</div>
+</div>
+<div class="relative hidden lg:block perspective-[1000px]">
+<div class="absolute -inset-10 rounded-full bg-primary/5 blur-3xl opacity-60"></div>
+<div class="glass-card relative aspect-square w-full max-w-lg mx-auto rounded-[2.5rem] overflow-hidden p-3 transform rotate-y-6 hover:rotate-y-0 transition-transform duration-700 shadow-2xl">
+<img class="h-full w-full object-cover rounded-[2rem] shadow-inner" data-alt="Detailed close up of metal gears and automotive machinery" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_Ej631c6x_3buDDX3YL90gEj5Z7fRJRarlCrsciutk30n8zQeLIUdl5EI9UEM0bzhNOHkovwY1DQJ_eyJvZUGK6DNWuv2EKA288PF-czLyjt37opk84Hl-zhFzBrk0oEDkTTnPN-STahMGgPkyOExZlbWsclDpBLhD-nKMwnLlsg-jjOx5_DvGm48uRg0eQ5DfdDQQOEiCY8eR0EN_C9Ph25F0DUTkEwn5OafTrzflzqEA52SlO0czEZaqxCy8mAT7EYqfkJOj1Tu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none rounded-[2rem]"></div>
+</div>
+<div class="absolute -bottom-8 -left-8 glass-strong rounded-[2rem] p-6 shadow-xl z-20 border border-white/60">
+<div class="flex items-center gap-4">
+<div class="flex size-12 items-center justify-center rounded-full bg-secondary-green/10 text-secondary-green border border-secondary-green/20">
+<span class="material-symbols-outlined text-2xl">verified</span>
+</div>
+<div>
+<p class="text-base font-bold text-slate-900">Official Partner</p>
+<p class="text-xs font-medium text-slate-500 uppercase tracking-wide">Castrol &amp; Bosch</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="w-full border-y border-white/50 bg-white/60 backdrop-blur-xl py-10 relative z-10 shadow-sm">
+<div class="mx-auto flex max-w-7xl flex-wrap justify-center gap-12 px-6 opacity-90 transition-all hover:opacity-100 md:justify-between">
+<div class="flex items-center gap-3 text-2xl font-bold text-slate-700 font-display group cursor-default">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-all">water_drop</span> 
+      Castrol
+    </div>
+<div class="flex items-center gap-3 text-2xl font-bold text-slate-700 font-display group cursor-default">
+<span class="material-symbols-outlined text-blue-600 group-hover:scale-110 transition-all">bolt</span> 
+      BOSCH
+    </div>
+<div class="flex items-center gap-3 text-2xl font-bold text-slate-700 font-display group cursor-default">
+<span class="material-symbols-outlined text-yellow-600 group-hover:scale-110 transition-all">tire_repair</span> 
+      MICHELIN
+    </div>
+<div class="flex items-center gap-3 text-2xl font-bold text-slate-700 font-display group cursor-default">
+<span class="material-symbols-outlined text-red-600 group-hover:scale-110 transition-all">car_repair</span> 
+      TOYOTA
+    </div>
+<div class="flex items-center gap-3 text-2xl font-bold text-slate-700 font-display group cursor-default">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-slate-600 transition-all">engineering</span> 
+      3M Auto
+    </div>
+</div>
+</div>
+<section class="py-24 px-4 md:px-8 relative z-10" id="products">
+<div class="mx-auto max-w-7xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+<div class="max-w-2xl">
+<h2 class="text-4xl font-bold tracking-tight text-slate-900 md:text-5xl">Explore Our Categories</h2>
+<p class="mt-6 text-lg text-slate-500">Find exactly what you need from our extensive inventory of premium spare parts.</p>
+</div>
+<a class="group flex items-center gap-3 text-base font-bold text-primary hover:text-white transition-colors bg-white hover:bg-primary px-6 py-3 rounded-full border border-slate-200 hover:border-primary shadow-sm hover:shadow-lg" href="#">
+                    View Full Catalog <span class="material-symbols-outlined text-xl transition-transform group-hover:translate-x-1">arrow_right_alt</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="glass-card group relative overflow-hidden rounded-[2rem] p-5 transition-all duration-500 hover:translate-y-[-8px] hover:shadow-xl border border-white/60">
+<div class="aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] bg-slate-100 border border-slate-200 relative shadow-inner">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Bottles of motor oil and lubricants" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBa8SPr50MN030ZwU8xhoD-NV1aH9VOqWvoYwtjPa8MfxJwqkrawUk6L7oP2MjCA1z7UguuaPOiO3f_tkcmauxzHN-WJn_e2mfoCeapIRtx0spG4rVSUlxuMO08HonsQPjAh4FFx-y1YcYLbudUNKJs3VTryBt_6YGHI_dZNHJbfiA_gMC8UOdxrXtvkz-ipz0lmBjIXuB_LUhR1IwiZhLWL3Zj0zdUG3kAV1HKAFn0FERKbvJ_xOuT-MTP9RFruygKFv12FR9ry0rO');"></div>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div>
+<h3 class="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors">Lubricants</h3>
+<p class="text-sm font-medium text-slate-500 mt-1">Oils, Fluids &amp; Greases</p>
+</div>
+<div class="flex size-12 items-center justify-center rounded-full bg-slate-100 text-slate-400 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg">
+<span class="material-symbols-outlined">arrow_outward</span>
+</div>
+</div>
+</div>
+<div class="glass-card group relative overflow-hidden rounded-[2rem] p-5 transition-all duration-500 hover:translate-y-[-8px] hover:shadow-xl border border-white/60">
+<div class="aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] bg-slate-100 border border-slate-200 relative shadow-inner">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Car disc brake rotor and caliper" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCm_PSHmi_PxKZaNu9hryt6wdoNFtqJ1O4hfqTI4WAa7pvmRYQ1OUpCAH_U7j4JcuagOwE62iJhPoraEPIdRVLAIKV7sKaF19evqfnd4KOFNdBhrh1IFCJ1vhB3j0_9SZqeAFDc4-LTPM42BfMFs9TQ62qC8CI-dnicT3EtAMmcUUw9AeDjTj4RbzWfmhlqcqcsHrNg6DzlgqhCHeXpI3L6TTN03KHf0OiGudKshM6A9k5IPdPz8iYSNxN4vKRd8-tp2vQn9IktLTdI');"></div>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div>
+<h3 class="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors">Braking</h3>
+<p class="text-sm font-medium text-slate-500 mt-1">Pads, Discs &amp; Calipers</p>
+</div>
+<div class="flex size-12 items-center justify-center rounded-full bg-slate-100 text-slate-400 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg">
+<span class="material-symbols-outlined">arrow_outward</span>
+</div>
+</div>
+</div>
+<div class="glass-card group relative overflow-hidden rounded-[2rem] p-5 transition-all duration-500 hover:translate-y-[-8px] hover:shadow-xl border border-white/60">
+<div class="aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] bg-slate-100 border border-slate-200 relative shadow-inner">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Modern car engine bay detail" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtOmpjtpW1gvbK-qfxhp8jVVUHvZWsDY9SWbuxwHxY_vwRthKaQ4kulAXmo2GAWzsgaJ46RZd_UrlHVf6BWbH52FNujPlf7U9Arpc0z6aZDHS60xdpRashOXXKJ6_WPaTry0IR_5feTKh2cvuWQq-2m2YfhwS_nijlZzF_vPeeSQ8CYO7rfSFwDZB-rD1u_AlIcbxkrgKc3t4XfhYwJjuIu_NFvj2HVZK4CS8fReKgI2RhYmKQFX0dBhW_sUJ3eOiZQ3VZ1XL39bbA');"></div>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div>
+<h3 class="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors">Engine</h3>
+<p class="text-sm font-medium text-slate-500 mt-1">Filters, Belts &amp; Plugs</p>
+</div>
+<div class="flex size-12 items-center justify-center rounded-full bg-slate-100 text-slate-400 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg">
+<span class="material-symbols-outlined">arrow_outward</span>
+</div>
+</div>
+</div>
+<div class="glass-card group relative overflow-hidden rounded-[2rem] p-5 transition-all duration-500 hover:translate-y-[-8px] hover:shadow-xl border border-white/60">
+<div class="aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] bg-slate-100 border border-slate-200 relative shadow-inner">
+<div class="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Car headlights and accessories" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC6_Awi7bbC2ePJdvKPaPfXAfxnqgkPKjPUKi_tU9ryVWmpeZcgcekruFuK4Ejx_Mf8C48sdw5s3zU-hC08jWtkJylWhea7_RqLSiuystiC6aYZEUwz2s4UozTiTSf7KvQwit_qteIppAmOnRBDTX9a0i2NtwovEz_zxLUh3MLNt2kdqqe_rs2x9gxoVLAMjSb46fD6MXsvfUBVEvH9K1otWsB-AGVfimODFXeqRGv6gQcjUo6-WTe_bFt2fYJza7tPgT4S1qMjCmLj');"></div>
+</div>
+<div class="mt-6 flex items-center justify-between">
+<div>
+<h3 class="text-xl font-bold text-slate-900 group-hover:text-primary transition-colors">Electrical</h3>
+<p class="text-sm font-medium text-slate-500 mt-1">Batteries, Lights &amp; Sensors</p>
+</div>
+<div class="flex size-12 items-center justify-center rounded-full bg-slate-100 text-slate-400 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:bg-primary group-hover:text-white group-hover:shadow-lg">
+<span class="material-symbols-outlined">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-4 md:px-8 relative overflow-hidden" id="services">
+<div class="absolute inset-0 bg-white/50 backdrop-blur-lg"></div>
+<div class="absolute top-1/4 right-0 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[100px] pointer-events-none"></div>
+<div class="absolute bottom-10 left-0 h-[400px] w-[400px] rounded-full bg-secondary-green/5 blur-[100px] pointer-events-none"></div>
+<div class="mx-auto max-w-7xl relative z-10">
+<div class="grid lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="glass-card p-8 rounded-[2rem] hover:bg-white transition-colors group border border-white/50 hover:border-white hover:shadow-xl">
+<div class="size-14 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center text-primary mb-6 border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all shadow-sm group-hover:shadow-lg group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">local_shipping</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-3">Express Delivery</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Same-day dispatch for orders placed before 2 PM. We understand your urgency.</p>
+</div>
+<div class="glass-card p-8 rounded-[2rem] hover:bg-white transition-colors group border border-white/50 hover:border-white hover:shadow-xl">
+<div class="size-14 rounded-2xl bg-gradient-to-br from-secondary-green/10 to-secondary-green/5 flex items-center justify-center text-secondary-green mb-6 border border-secondary-green/10 group-hover:bg-secondary-green group-hover:text-white transition-all shadow-sm group-hover:shadow-lg group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-3">Quality Guarantee</h3>
+<p class="text-sm text-slate-500 leading-relaxed">100% genuine parts sourced directly from manufacturers with warranty support.</p>
+</div>
+<div class="glass-card p-8 rounded-[2rem] hover:bg-white transition-colors group border border-white/50 hover:border-white hover:shadow-xl">
+<div class="size-14 rounded-2xl bg-gradient-to-br from-blue-500/10 to-blue-500/5 flex items-center justify-center text-blue-500 mb-6 border border-blue-500/10 group-hover:bg-blue-500 group-hover:text-white transition-all shadow-sm group-hover:shadow-lg group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">support_agent</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-3">Expert Support</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Not sure which part fits? Our mechanics are just a call away to help you.</p>
+</div>
+<div class="glass-card p-8 rounded-[2rem] hover:bg-white transition-colors group border border-white/50 hover:border-white hover:shadow-xl">
+<div class="size-14 rounded-2xl bg-gradient-to-br from-yellow-500/10 to-yellow-500/5 flex items-center justify-center text-yellow-500 mb-6 border border-yellow-500/10 group-hover:bg-yellow-500 group-hover:text-white transition-all shadow-sm group-hover:shadow-lg group-hover:scale-110">
+<span class="material-symbols-outlined text-3xl">handshake</span>
+</div>
+<h3 class="text-xl font-bold text-slate-900 mb-3">B2B Wholesale</h3>
+<p class="text-sm text-slate-500 leading-relaxed">Special pricing and credit terms for garage owners and fleet managers.</p>
+</div>
+</div>
+</div>
+<div class="order-1 lg:order-2 flex flex-col gap-8">
+<h2 class="text-4xl font-black text-slate-900 md:text-6xl tracking-tight leading-tight">
+                        SERVICE BEYOND <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-hover drop-shadow-sm">JUST SELLING PARTS</span>
+</h2>
+<p class="text-xl text-slate-600 font-light leading-relaxed">
+                        At Krishna Motor Parts, we don't just hand you a box. We provide the expertise and reliability you need to keep your vehicles on the road. Whether you are a DIY enthusiast or a professional mechanic, our ecosystem is built to support your success.
+                    </p>
+<div class="pt-4">
+<button class="group flex items-center gap-4 text-slate-800 font-bold text-lg hover:text-primary transition-colors">
+<span class="border-b-2 border-primary pb-1">Explore Services</span>
+<span class="material-symbols-outlined transition-transform group-hover:translate-x-2 text-primary">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-4 md:px-8 relative z-10" id="about">
+<div class="mx-auto max-w-7xl">
+<div class="overflow-hidden rounded-[3rem] glass-card relative border border-white/50 shadow-2xl">
+<div class="absolute inset-0 bg-white/60 backdrop-blur-md z-0"></div>
+<div class="absolute top-0 right-0 w-3/5 h-full bg-gradient-to-l from-white/95 via-white/50 to-transparent skew-x-12 translate-x-20 z-0 hidden lg:block"></div>
+<div class="relative z-10 flex flex-col lg:flex-row items-stretch">
+<div class="p-10 md:p-16 lg:w-1/2 flex flex-col justify-center gap-8">
+<div class="glass-strong inline-block px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest text-slate-800 w-fit border border-slate-200 shadow-sm">Since 2010</div>
+<h2 class="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">Driving Excellence in Automotive Spares</h2>
+<div class="space-y-6">
+<p class="text-slate-600 text-lg leading-relaxed font-light">
+                                Krishna Motor Parts started as a small shop with a big vision: to eliminate the hassle of finding genuine spare parts. Over a decade later, we have grown into a trusted distributor partnering with global giants like Castrol, Bosch, and more.
+                            </p>
+<p class="text-slate-600 text-lg leading-relaxed font-light">
+                                 Our mission is simple: keep your engine running smooth, safe, and efficient.
+                            </p>
+</div>
+<button class="mt-4 w-fit rounded-full bg-slate-900 text-white px-8 py-4 text-sm font-bold uppercase tracking-wide transition hover:bg-primary hover:scale-105 shadow-xl">
+                            Read Our Story
+                        </button>
+</div>
+<div class="w-full lg:w-1/2 min-h-[400px] relative">
+<div class="absolute inset-0 h-full w-full bg-cover bg-center" data-alt="Shelves stocked with automotive parts in a modern warehouse" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA4Jso-oG3LrofXKncjMT45MAYVFq0PtcG14Hw4a7EQRnKgXuJuGQ3Lh_C3JvwGsvYFuKdWnQLsT6UstwQaWTvTDyj9gI7H7h1ocTFp5E1zztoooEEWBuymdzgQQ5-twNOY4QVijYZvzZ1L_IaaDEuiwj2Ydv8dwfEk63yJoWBJiHzXjiFFhlgixFHvs2iX6-EtCSDjMyXm6nRAtHG38COEy3ttdBBc8rolo-_WYyEFTYRBUbbShIWgQBUH3YrxU7Wp3qewbKQ1n_dF');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-white lg:from-transparent to-transparent opacity-90 lg:hidden"></div>
+<div class="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-white/90 to-transparent hidden lg:block"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 px-4 md:px-8 relative z-10">
+<div class="mx-auto max-w-5xl text-center glass-card rounded-[3rem] p-12 md:p-16 border border-white/60 relative overflow-hidden shadow-2xl backdrop-blur-2xl">
+<div class="absolute top-[-100px] right-[-100px] h-64 w-64 rounded-full bg-primary/20 blur-[80px]"></div>
+<div class="absolute bottom-[-100px] left-[-100px] h-64 w-64 rounded-full bg-secondary-green/20 blur-[80px]"></div>
+<div class="relative z-10">
+<h2 class="text-4xl font-black text-slate-900 md:text-6xl mb-8">Ready to Rev Up?</h2>
+<p class="text-slate-600 mb-10 max-w-2xl mx-auto text-lg">Join our newsletter to get exclusive deals on parts, maintenance tips, and new product alerts directly to your inbox.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input class="flex-1 rounded-full border border-slate-300 bg-white/80 backdrop-blur-xl px-8 py-4 text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-primary focus:bg-white transition-all shadow-inner text-lg" placeholder="Enter your email address" type="email"/>
+<button class="rounded-full bg-gradient-to-r from-primary to-primary-hover text-white font-bold px-10 py-4 transition-all hover:scale-105 shadow-lg hover:shadow-xl text-lg" type="button">
+                    Subscribe
+                </button>
+</form>
+</div>
+</div>
+</section>
+<footer class="bg-white/80 backdrop-blur-xl pt-20 pb-10 px-4 md:px-8 border-t border-slate-200 relative z-10">
+<div class="mx-auto max-w-7xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<div class="flex size-10 items-center justify-center rounded-full bg-primary text-white shadow-lg ring-2 ring-red-100">
+<span class="material-symbols-outlined text-xl">settings</span>
+</div>
+<span class="text-xl font-bold text-slate-900">Krishna<span class="text-primary">Motor</span>Parts</span>
+</div>
+<p class="text-sm text-slate-500 leading-relaxed">Your trusted partner for genuine automotive components and accessories. We ensure quality and durability in every part.</p>
+<div class="flex gap-5 mt-2">
+<a class="text-slate-400 hover:text-primary transition hover:scale-110" href="#"><span class="material-symbols-outlined text-2xl">public</span></a>
+<a class="text-slate-400 hover:text-primary transition hover:scale-110" href="#"><span class="material-symbols-outlined text-2xl">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h4 class="text-slate-900 font-bold mb-6 text-lg">Quick Links</h4>
+<ul class="flex flex-col gap-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition hover:translate-x-2 inline-block font-medium" href="#">Home</a></li>
+<li><a class="hover:text-primary transition hover:translate-x-2 inline-block font-medium" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition hover:translate-x-2 inline-block font-medium" href="#">Shop Products</a></li>
+<li><a class="hover:text-primary transition hover:translate-x-2 inline-block font-medium" href="#">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-slate-900 font-bold mb-6 text-lg">Categories</h4>
+<ul class="flex flex-col gap-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition hover:translate-x-2 inline-block font-medium" href="#">Engine Oils</a></li>
+<li><a class="hover:text-primary transition hover:translate-x-2 inline-block font-medium" href="#">Brake Pads</a></li>
+<li><a class="hover:text-primary transition hover:translate-x-2 inline-block font-medium" href="#">Filters</a></li>
+<li><a class="hover:text-primary transition hover:translate-x-2 inline-block font-medium" href="#">Accessories</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-slate-900 font-bold mb-6 text-lg">Contact Us</h4>
+<ul class="flex flex-col gap-5 text-sm text-slate-500">
+<li class="flex items-start gap-4">
+<span class="material-symbols-outlined text-primary shrink-0">location_on</span>
+<span>123 Auto Market Road,<br/>Industrial Area, City - 560001</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary shrink-0">call</span>
+<span>+91 98765 43210</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary shrink-0">mail</span>
+<span>sales@krishnamotors.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-400">
+<p>© 2024 Krishna Motor Parts. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:text-primary transition font-medium" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition font-medium" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
