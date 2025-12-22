@@ -9,18 +9,36 @@ const Home = () => {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
     if (email.trim()) {
-      // Here you would typically send the email to your backend
-      console.log('Subscribing email:', email);
-      setIsSubscribed(true);
-      setEmail('');
-      
-      // Reset the success message after 3 seconds
-      setTimeout(() => {
-        setIsSubscribed(false);
-      }, 3000);
+      try {
+        const response = await fetch('http://localhost:5001/api/newsletter/subscribe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email: email.trim() }),
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          setIsSubscribed(true);
+          setEmail('');
+          
+          // Reset the success message after 5 seconds
+          setTimeout(() => {
+            setIsSubscribed(false);
+          }, 5000);
+        } else {
+          console.error('Newsletter subscription failed:', result.error);
+          // You could show an error message here
+        }
+      } catch (error) {
+        console.error('Error subscribing to newsletter:', error);
+        // You could show an error message here
+      }
     }
   }; 
 

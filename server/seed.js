@@ -302,6 +302,30 @@ const sampleUsers = [
     password: 'admin123',
     phone: '9876543211',
     role: 'admin'
+  },
+  {
+    firstName: 'Krishna',
+    lastName: 'Motor Parts',
+    email: 'krishnamotorparts1993@gmail.com',
+    password: 'admin123',
+    phone: '8630373030',
+    role: 'admin'
+  },
+  {
+    firstName: 'Demo',
+    lastName: 'Customer',
+    email: 'demo@test.com',
+    password: '123456',
+    phone: '9876543212',
+    role: 'customer'
+  },
+  {
+    firstName: 'Paras',
+    lastName: 'Chauhan',
+    email: 'chauhanparas7500@gmail.com',
+    password: 'Paras@1234',
+    phone: '9389333504',
+    role: 'customer'
   }
 ];
 

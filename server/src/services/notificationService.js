@@ -9,7 +9,7 @@ class NotificationService {
   // Initialize email service
   initializeEmailService() {
     if (process.env.EMAIL_SERVICE && process.env.EMAIL_USERNAME && process.env.EMAIL_PASSWORD) {
-      this.emailTransporter = nodemailer.createTransporter({
+      this.emailTransporter = nodemailer.createTransport({
         service: process.env.EMAIL_SERVICE,
         auth: {
           user: process.env.EMAIL_USERNAME,
