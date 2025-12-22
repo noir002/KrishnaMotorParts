@@ -3,7 +3,7 @@ services:
     name: krishna-motor-parts-api
     env: node
     plan: free
-    buildCommand: npm install
+    buildCommand: npm ci
     startCommand: npm start
     healthCheckPath: /health
     envVars:
@@ -11,3 +11,27 @@ services:
         value: production
       - key: PORT
         value: 10000
+      - key: MONGODB_URI
+        value: "mongodb+srv://paraschauhan:Paras%401234@krishnamotorparts.6qljhwh.mongodb.net/automobile_ecommerce?retryWrites=true&w=majority&appName=KrishnaMotorParts"
+      - key: CLIENT_URL
+        value: https://krishna-motor-parts-noir002s-projects.vercel.app
+      - key: JWT_SECRET
+        value: automobile_ecommerce_jwt_secret_key_2024_production_secure
+      - key: JWT_EXPIRE
+        value: 30d
+      - key: EMAIL_SERVICE
+        value: gmail
+      - key: EMAIL_USERNAME
+        value: krishnamotorparts1993@gmail.com
+      - key: EMAIL_PASSWORD
+        value: szuq vhhu ndzt iiof
+      - key: ADMIN_EMAIL
+        value: krishnamotorparts1993@gmail.com
+      - key: MAX_FILE_UPLOAD
+        value: 1000000
+      - key: FILE_UPLOAD_PATH
+        value: ./public/uploads
+      - key: RATE_LIMIT_WINDOW
+        value: 15
+      - key: RATE_LIMIT_MAX_REQUESTS
+        value: 100
