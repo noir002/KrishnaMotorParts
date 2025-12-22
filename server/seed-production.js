@@ -97,7 +97,7 @@ const sampleProducts = [
       type: 'Flat blade'
     },
     images: [
-      'https://images.shutterstock.com/image-photo/car-windshield-wiper-blade-isolated-600nw-1925419537.jpg'
+      'https://i.ebayimg.com/images/g/eLAAAOSwOHlk8f6K/s-l1600.webp'
     ],
     stock: {
       quantity: 45,
@@ -125,7 +125,7 @@ const sampleProducts = [
       type: 'Synthetic'
     },
     images: [
-      'https://images.shutterstock.com/image-photo/motor-oil-plastic-bottle-isolated-600nw-1434593966.jpg'
+      'https://www.shutterstock.com/shutterstock/photos/2488384121/display_1500/stock-photo-kedah-malaysia-july-a-bottles-castrol-magnatec-fully-synthetic-w-engine-oil-close-2488384121.jpg'
     ],
     stock: {
       quantity: 20,
@@ -153,7 +153,7 @@ const sampleProducts = [
       includes: 'Belt, Tensioner, Pulleys'
     },
     images: [
-      'https://images.shutterstock.com/image-photo/timing-belt-kit-car-engine-600nw-1456789123.jpg'
+      'https://5.imimg.com/data5/KI/IT/CI/SELLER-786246/timing-belt-1000x1000.jpg'
     ],
     stock: {
       quantity: 15,
@@ -181,7 +181,7 @@ const sampleProducts = [
       protection: '-37°C to +106°C'
     },
     images: [
-      'https://images.shutterstock.com/image-photo/car-coolant-antifreeze-bottle-isolated-600nw-1567890234.jpg'
+      'https://cdn11.bigcommerce.com/s-eqgv9kc7pj/images/stencil/1280x1280/products/5607/9836/Prime_Antifreeze-6__17207.1756384741.png?c=2'
     ],
     stock: {
       quantity: 35,
