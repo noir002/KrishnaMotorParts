@@ -100,18 +100,18 @@ const Footer = () => {
               <li className="flex items-start gap-4">
                 <span className="material-symbols-outlined text-primary shrink-0">location_on</span>
                 <span>
-                  123 Auto Market Road,<br/>
-                  Industrial Area,<br/>
-                  City - 560001
+                  Krishna Motor Parts,<br/>
+                  Chhatari Doraha, Chattari,<br/>
+                  Bulandshahr, U.P.
                 </span>
               </li>
               <li className="flex items-center gap-4">
                 <span className="material-symbols-outlined text-primary shrink-0">call</span>
-                <span>+91 98765 43210</span>
+                <span>+91 8630373030</span>
               </li>
               <li className="flex items-center gap-4">
                 <span className="material-symbols-outlined text-primary shrink-0">email</span>
-                <span>info@krishnamotorparts.com</span>
+                <span>Krishnamotorparts1993@gmail.com</span>
               </li>
             </ul>
           </div>

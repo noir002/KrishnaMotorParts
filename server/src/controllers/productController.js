@@ -70,24 +70,23 @@ const getProducts = async (req, res, next) => {
     // Build sort object
     let sort = {};
     if (req.query.sortBy) {
-      switch (req.query.sortBy) {
-        case 'price_asc':
-          sort = { price: 1 };
+      const sortBy = req.query.sortBy;
+      const sortOrder = req.query.sortOrder === 'desc' ? -1 : 1;
+      
+      switch (sortBy) {
+        case 'price':
+          sort = { price: sortOrder };
           break;
-        case 'price_desc':
-          sort = { price: -1 };
+        case 'name':
+          sort = { name: sortOrder };
           break;
-        case 'name_asc':
-          sort = { name: 1 };
-          break;
-        case 'name_desc':
-          sort = { name: -1 };
-          break;
+        case 'createdAt':
         case 'newest':
-          sort = { createdAt: -1 };
+          sort = { createdAt: sortOrder };
           break;
-        case 'oldest':
-          sort = { createdAt: 1 };
+        case 'popularity':
+          // For now, sort by stock quantity as a proxy for popularity
+          sort = { 'stock.quantity': sortOrder };
           break;
         default:
           // If text search is used, sort by text score

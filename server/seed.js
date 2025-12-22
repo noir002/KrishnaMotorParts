@@ -66,7 +66,7 @@ const sampleProducts = [
       height: '60mm'
     },
     images: [
-      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzMzNzNkYyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkJyYWtlIFBhZDwvdGV4dD48L3N2Zz4='
+      'https://api.brakeup.in/media/product/3db376ed-82b7-44ef-ab__1.png'
     ],
     stock: {
       quantity: 25,
@@ -96,7 +96,7 @@ const sampleProducts = [
       diameter: '76mm'
     },
     images: [
-      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzEwYjk4MSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPk9pbCBGaWx0ZXI8L3RleHQ+PC9zdmc+'
+      'https://www.pgfilters.com/wp-content/uploads/2023/02/AdobeStock_485635853.jpeg'
     ],
     stock: {
       quantity: 50,
@@ -127,7 +127,7 @@ const sampleProducts = [
       lumens: '3000lm'
     },
     images: [
-      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2Y1OWUwYiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkxFRCBCdWxiPC90ZXh0Pjwvc3ZnPg=='
+      'https://i.ebayimg.com/images/g/XK4AAOSwKmRj0yhu/s-l1600.webp'
     ],
     stock: {
       quantity: 30,
@@ -155,7 +155,7 @@ const sampleProducts = [
       mirrorSize: '180x120mm'
     },
     images: [
-      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzg5MzNmZiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlNpZGUgTWlycm9yPC90ZXh0Pjwvc3ZnPg=='
+      'https://m.media-amazon.com/images/I/91hffoF34BL._SL1500_.jpg'
     ],
     stock: {
       quantity: 15,
@@ -184,7 +184,7 @@ const sampleProducts = [
       frameType: 'Conventional'
     },
     images: [
-      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2VmNDQ0NCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlNpZGUgTWlycm9yPC90ZXh0Pjwvc3ZnPg=='
+      'https://i.ebayimg.com/images/g/eLAAAOSwOHlk8f6K/s-l1600.webp'
     ],
     stock: {
       quantity: 40,
@@ -214,7 +214,7 @@ const sampleProducts = [
       apiRating: 'SN/CF'
     },
     images: [
-      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzA2YjZkNCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkVuZ2luZSBPaWw8L3RleHQ+PC9zdmc+'
+      'https://www.shutterstock.com/shutterstock/photos/2488384121/display_1500/stock-photo-kedah-malaysia-july-a-bottles-castrol-magnatec-fully-synthetic-w-engine-oil-close-2488384121.jpg'
     ],
     stock: {
       quantity: 20,
@@ -244,7 +244,7 @@ const sampleProducts = [
       includes: 'Belt, Tensioner, Idler Pulley'
     },
     images: [
-      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzY2NjY2NiIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlRpbWluZyBCZWx0PC90ZXh0Pjwvc3ZnPg=='
+      'https://5.imimg.com/data5/KI/IT/CI/SELLER-786246/timing-belt-1000x1000.jpg'
     ],
     stock: {
       quantity: 12,
@@ -274,7 +274,7 @@ const sampleProducts = [
       boilingPoint: '108°C'
     },
     images: [
-      'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iIzIyYzU1ZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjI0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkNvb2xhbnQ8L3RleHQ+PC9zdmc+'
+      'https://cdn11.bigcommerce.com/s-eqgv9kc7pj/images/stencil/1280x1280/products/5607/9836/Prime_Antifreeze-6__17207.1756384741.png?c=2'
     ],
     stock: {
       quantity: 35,

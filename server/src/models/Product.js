@@ -101,8 +101,7 @@ const productSchema = new mongoose.Schema({
     type: String,
     validate: {
       validator: function(url) {
-        // Allow http/https URLs or data URLs
-        return /^https?:\/\/.+/.test(url) || /^data:image\/.+/.test(url);
+        return /^https?:\/\/.+\.(jpg|jpeg|png|gif|webp)$/i.test(url);
       },
       message: 'Invalid image URL format'
     }

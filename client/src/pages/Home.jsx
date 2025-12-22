@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 /**
@@ -6,6 +6,23 @@ import { Link } from 'react-router-dom';
  * @returns {JSX.Element} The home page component
  */
 const Home = () => { 
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (email.trim()) {
+      // Here you would typically send the email to your backend
+      console.log('Subscribing email:', email);
+      setIsSubscribed(true);
+      setEmail('');
+      
+      // Reset the success message after 3 seconds
+      setTimeout(() => {
+        setIsSubscribed(false);
+      }, 3000);
+    }
+  }; 
 
   const categories = [
     { title: "Lubricants", subtitle: "Oils, Fluids & Greases", img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBa8SPr50MN030ZwU8xhoD-NV1aH9VOqWvoYwtjPa8MfxJwqkrawUk6L7oP2MjCA1z7UguuaPOiO3f_tkcmauxzHN-WJn_e2mfoCeapIRtx0spG4rVSUlxuMO08HonsQPjAh4FFx-y1YcYLbudUNKJs3VTryBt_6YGHI_dZNHJbfiA_gMC8UOdxrXtvkz-ipz0lmBjIXuB_LUhR1IwiZhLWL3Zj0zdUG3kAV1HKAFn0FERKbvJ_xOuT-MTP9RFruygKFv12FR9ry0rO" },
@@ -18,11 +35,11 @@ const Home = () => {
     { icon: "local_shipping", title: "Express Delivery", desc: "Same-day dispatch for orders placed before 2 PM. We understand your urgency.", color: "primary" },
     { icon: "workspace_premium", title: "Quality Guarantee", desc: "100% genuine parts sourced directly from manufacturers with warranty support.", color: "secondary-green" },
     { icon: "support_agent", title: "Expert Support", desc: "Not sure which part fits? Our mechanics are just a call away to help you.", color: "blue-500" },
-    { icon: "handshake", title: "B2B Wholesale", desc: "Special pricing and credit terms for garage owners and fleet managers.", color: "yellow-500" },
+    { icon: "handshake", title: "B2B Wholesale", desc: "Special pricing and credit terms for garage owners and fleet managers.", color: "yellow-500" }
   ];
 
   return (
-    <div className="dark">
+    <div>
       {/* Hero Section */}
       <section className="relative flex min-h-screen w-full items-center justify-center pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 z-0 bg-[#efeff2] dark:bg-transparent transition-colors">
@@ -144,7 +161,11 @@ const Home = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {categories.map((cat, idx) => (
-              <div key={idx} className="neu-flat group relative overflow-hidden p-4 transition-all duration-500 hover:translate-y-[-5px] dark:hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.1)]">
+              <Link 
+                key={idx} 
+                to="/products"
+                className="neu-flat group relative overflow-hidden p-4 transition-all duration-500 hover:translate-y-[-5px] dark:hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.1)] cursor-pointer"
+              >
                 <div className="aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] bg-slate-200 dark:bg-black/30 relative">
                   <div className="h-full w-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url('${cat.img}')` }}></div>
                   <div className="absolute inset-0 bg-transparent dark:bg-gradient-to-t dark:from-black/80 dark:to-transparent opacity-60"></div>
@@ -158,7 +179,7 @@ const Home = () => {
                     <span className="material-symbols-outlined text-lg">arrow_outward</span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -193,10 +214,13 @@ const Home = () => {
                 We provide the expertise and reliability you need to keep your vehicles on the road. Professional mechanics, easy returns, and genuine support.
               </p>
               <div className="pt-4">
-                <button className="group flex items-center gap-4 text-slate-800 dark:text-white font-bold text-lg hover:text-primary dark:hover:text-primary transition-colors">
+                <Link 
+                  to="/products"
+                  className="group flex items-center gap-4 text-slate-800 dark:text-white font-bold text-lg hover:text-primary dark:hover:text-primary transition-colors"
+                >
                   <span className="border-b-2 border-primary pb-1">Explore Services</span>
                   <span className="material-symbols-outlined transition-transform group-hover:translate-x-2 text-primary">arrow_forward</span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -209,13 +233,27 @@ const Home = () => {
           <div className="relative z-10">
             <h2 className="text-4xl font-black text-slate-800 dark:text-white md:text-6xl mb-8 transition-colors">Ready to Rev Up?</h2>
             <p className="text-slate-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto text-lg transition-colors">Join our newsletter to get exclusive deals on parts and maintenance tips.</p>
-            <form className="flex flex-col sm:flex-row gap-6 max-w-lg mx-auto">
-              <input className="flex-1 neu-pressed px-8 py-4 text-slate-700 dark:text-white bg-[#efeff2] dark:bg-black/30 placeholder:text-slate-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all dark:border dark:border-white/10" placeholder="Enter your email address" type="email" />
+            <form className="flex flex-col sm:flex-row gap-6 max-w-lg mx-auto" onSubmit={handleSubscribe}>
+              <input 
+                className="flex-1 neu-pressed px-8 py-4 text-slate-700 dark:text-white bg-[#efeff2] dark:bg-black/30 placeholder:text-slate-400 dark:placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all dark:border dark:border-white/10" 
+                placeholder="Enter your email address" 
+                type="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
               
-              <button className="rounded-full bg-primary text-white font-bold px-10 py-4 shadow-[6px_6px_12px_#d1d1d6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.2)] dark:bg-gradient-to-r dark:from-primary dark:to-red-600 dark:shadow-[0_0_20px_rgba(215,25,32,0.4)] transition-all transform active:scale-95 text-lg" type="button">
-                Subscribe
+              <button 
+                className="rounded-full bg-primary text-white font-bold px-10 py-4 shadow-[6px_6px_12px_#d1d1d6,-6px_-6px_12px_#ffffff] hover:shadow-[inset_4px_4px_8px_rgba(0,0,0,0.2)] dark:bg-gradient-to-r dark:from-primary dark:to-red-600 dark:shadow-[0_0_20px_rgba(215,25,32,0.4)] transition-all transform active:scale-95 text-lg disabled:opacity-50" 
+                type="submit"
+                disabled={isSubscribed}
+              >
+                {isSubscribed ? 'Subscribed!' : 'Subscribe'}
               </button>
             </form>
+            {isSubscribed && (
+              <p className="mt-4 text-secondary-green font-medium">Thank you for subscribing! You'll receive our latest updates.</p>
+            )}
           </div>
         </div>
       </section>

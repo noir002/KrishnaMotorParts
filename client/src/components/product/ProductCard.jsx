@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '../common/Button';
 import { useCart } from '../../context/CartContext';
@@ -10,9 +10,6 @@ const ProductCard = ({ product }) => {
   // Use real-time stock updates
   const realtimeStock = useRealTimeStock(product._id, product.stock);
   const currentStock = realtimeStock || product.stock;
-
-  // State for image loading error
-  const [imageError, setImageError] = useState(false);
 
   const handleAddToCart = async (e) => {
     e.preventDefault(); // Prevent navigation when clicking add to cart
@@ -42,12 +39,11 @@ const ProductCard = ({ product }) => {
       <div className="neu-flat p-6 hover:shadow-lg transition-all duration-300 group-hover:scale-[1.02] relative overflow-hidden">
         {/* Product Image */}
         <div className="aspect-square mb-4 rounded-xl overflow-hidden bg-white dark:bg-slate-800">
-          {product.images && product.images.length > 0 && !imageError ? (
+          {product.images && product.images.length > 0 ? (
             <img
               src={product.images[0]}
               alt={product.name}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-              onError={() => setImageError(true)}
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center text-slate-400 dark:text-slate-600">

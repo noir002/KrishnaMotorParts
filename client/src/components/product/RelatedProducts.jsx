@@ -2,25 +2,21 @@ import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
 import LoadingSpinner from '../common/LoadingSpinner';
 import productService from '../../services/productService';
-import { useErrorHandler } from '../../hooks/useErrorHandler';
 
-const RelatedProducts = ({ productId, category, brand, compatibility = [] }) => {
+const RelatedProducts = ({ productId, category, brand }) => {
   const [relatedProducts, setRelatedProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const { handleApiResponse } = useErrorHandler();
 
   useEffect(() => {
     const fetchRelatedProducts = async () => {
       if (!productId) return;
 
       setLoading(true);
-      setError(null);
 
       try {
         // Build query parameters for related products
         const params = {
-          limit: 8 // Show max 8 related products
+          limit: 12 // Show max 12 related products to filter from
         };
 
         // Add category filter if available
@@ -28,37 +24,35 @@ const RelatedProducts = ({ productId, category, brand, compatibility = [] }) => 
           params.category = typeof category === 'object' ? category._id : category;
         }
 
-        // Add brand filter if available
-        if (brand) {
-          params.brand = brand;
-        }
+        console.log('Fetching related products with params:', params);
 
-        // Add vehicle compatibility if available
-        if (compatibility && compatibility.length > 0) {
-          const firstVehicle = compatibility[0];
-          if (firstVehicle.make) {
-            params.vehicleMake = firstVehicle.make;
-          }
-        }
-
-        const response = await productService.getRelatedProducts(productId, params);
-        const result = handleApiResponse(response, 'fetching related products');
+        const response = await productService.getProducts(params);
         
-        if (result.success) {
-          setRelatedProducts(result.data);
+        if (response.success && response.data?.products) {
+          // Filter out the current product and limit results
+          const allProducts = response.data.products;
+          console.log('All products fetched:', allProducts.length);
+          
+          const filteredProducts = allProducts
+            .filter(product => product._id !== productId)
+            .slice(0, 8);
+            
+          console.log('Filtered related products:', filteredProducts.length);
+          setRelatedProducts(filteredProducts);
         } else {
-          setError(result.error);
+          console.log('No products found or API error');
+          setRelatedProducts([]);
         }
       } catch (err) {
         console.error('Error fetching related products:', err);
-        setError('Failed to load related products');
+        setRelatedProducts([]);
       } finally {
         setLoading(false);
       }
     };
 
     fetchRelatedProducts();
-  }, [productId, category, brand, compatibility, handleApiResponse]);
+  }, [productId, category, brand]);
 
   if (loading) {
     return (
@@ -76,7 +70,7 @@ const RelatedProducts = ({ productId, category, brand, compatibility = [] }) => 
     );
   }
 
-  if (error || !relatedProducts || relatedProducts.length === 0) {
+  if (!relatedProducts || relatedProducts.length === 0) {
     return (
       <div className="neu-flat p-8 text-center">
         <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-4 flex items-center justify-center gap-2">

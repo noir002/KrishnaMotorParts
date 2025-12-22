@@ -28,9 +28,6 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files
-app.use('/images', express.static('public/images'));
-
 // Compression middleware
 app.use(compression());
 
@@ -80,6 +77,7 @@ app.use('/api/categories', require('./routes/categories'));
 app.use('/api/cart', require('./routes/cart'));
 app.use('/api/orders', require('./routes/orders'));
 app.use('/api/admin', require('./routes/admin'));
+app.use('/api/newsletter', require('./routes/newsletter'));
 
 // Error handling middleware (must be last)
 app.use(errorHandler);

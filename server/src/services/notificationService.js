@@ -37,7 +37,28 @@ class NotificationService {
     return this.sendEmail(customer.email, subject, html);
   }
 
-  // Send low stock alert to admin
+  // Send newsletter subscription confirmation
+  async sendNewsletterConfirmation(email) {
+    const subject = 'Welcome to Krishna Motor Parts Newsletter!';
+    const html = this.generateNewsletterConfirmationHTML(email);
+    
+    return this.sendEmail(email, subject, html);
+  }
+
+  // Send test email
+  async sendTestEmail(to) {
+    const subject = 'Test Email from Krishna Motor Parts';
+    const html = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h1 style="color: #d71920;">Krishna Motor Parts</h1>
+        <p>This is a test email to verify email functionality is working correctly.</p>
+        <p>If you received this email, the email service is configured properly!</p>
+        <p>Timestamp: ${new Date().toLocaleString()}</p>
+      </div>
+    `;
+    
+    return this.sendEmail(to, subject, html);
+  }
   async sendLowStockAlert(product) {
     const adminEmail = process.env.ADMIN_EMAIL || process.env.EMAIL_USERNAME;
     if (!adminEmail) return;
@@ -191,6 +212,54 @@ class NotificationService {
           
           <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
             <p style="color: #666;">Thank you for choosing Krishna Motor Parts!</p>
+          </div>
+        </div>
+      </body>
+      </html>
+    `;
+  }
+
+  // Generate newsletter confirmation HTML
+  generateNewsletterConfirmationHTML(email) {
+    return `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="utf-8">
+        <title>Newsletter Subscription Confirmed</title>
+      </head>
+      <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+        <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+          <div style="text-align: center; margin-bottom: 30px;">
+            <h1 style="color: #d71920;">Krishna Motor Parts</h1>
+            <h2 style="color: #666;">Welcome to Our Newsletter!</h2>
+          </div>
+          
+          <div style="background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 5px; text-align: center;">
+            <h3 style="color: #059669;">✓ Subscription Confirmed</h3>
+            <p>Thank you for subscribing to our newsletter with email: <strong>${email}</strong></p>
+          </div>
+          
+          <p>You'll now receive:</p>
+          <ul style="padding-left: 20px;">
+            <li>Latest product updates and new arrivals</li>
+            <li>Exclusive deals and discounts</li>
+            <li>Maintenance tips and automotive insights</li>
+            <li>Special offers for genuine spare parts</li>
+          </ul>
+          
+          <div style="text-align: center; margin: 30px 0;">
+            <a href="${process.env.CLIENT_URL}/products" 
+               style="background: #d71920; color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; display: inline-block;">
+              Shop Now
+            </a>
+          </div>
+          
+          <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+            <p style="color: #666; font-size: 12px;">
+              Krishna Motor Parts, Chhatari Doraha, Chattari, Bulandshahr, U.P.<br>
+              Phone: +91 8630373030 | Email: Krishnamotorparts1993@gmail.com
+            </p>
           </div>
         </div>
       </body>

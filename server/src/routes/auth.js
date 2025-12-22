@@ -14,11 +14,21 @@ const { authLimiter } = require('../middleware/rateLimiter');
 const router = express.Router();
 
 // Apply rate limiting only in production
-const rateLimitMiddleware = process.env.NODE_ENV === 'test' ? (req, res, next) => next() : authLimiter;
+const rateLimitMiddleware = process.env.NODE_ENV === 'production' ? authLimiter : (req, res, next) => next();
+
+// Debug middleware to log all requests
+const debugMiddleware = (req, res, next) => {
+  console.log(`${req.method} ${req.path}`, {
+    headers: req.headers,
+    body: req.body,
+    query: req.query
+  });
+  next();
+};
 
 // Public routes with rate limiting
-router.post('/register', rateLimitMiddleware, register);
-router.post('/login', rateLimitMiddleware, login);
+router.post('/register', rateLimitMiddleware, debugMiddleware, register);
+router.post('/login', rateLimitMiddleware, debugMiddleware, login);
 
 // Protected routes
 router.get('/me', protect, getMe);

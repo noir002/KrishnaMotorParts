@@ -107,10 +107,14 @@ export const AuthProvider = ({ children }) => {
     dispatch({ type: 'LOGIN_START' });
     
     try {
+      console.log('Attempting login with:', { email, password: '***' });
+      
       const response = await api.post('/api/auth/login', {
         email,
         password
       });
+      
+      console.log('Login response:', response.data);
       
       // Backend returns data in response.data.data format
       const { user, token } = response.data.data;
@@ -123,6 +127,9 @@ export const AuthProvider = ({ children }) => {
       showSuccess(`Welcome back, ${user.firstName}!`);
       return { success: true };
     } catch (error) {
+      console.error('Login error:', error);
+      console.error('Error response:', error.response?.data);
+      
       const errorResult = handleError(error, 'login');
       dispatch({
         type: 'LOGIN_FAILURE',

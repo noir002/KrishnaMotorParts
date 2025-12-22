@@ -35,38 +35,12 @@ class ProductService {
       const response = await api.get(`/api/products/${productId}`);
       return {
         success: true,
-        data: response.data.data || response.data
+        data: response.data.data?.product || response.data.data || response.data
       };
     } catch (error) {
       return {
         success: false,
         error: error.response?.data?.error?.message || 'Failed to fetch product',
-        status: error.response?.status
-      };
-    }
-  }
-
-  // Get related products
-  async getRelatedProducts(productId, params = {}) {
-    try {
-      const queryParams = new URLSearchParams();
-      queryParams.append('exclude', productId);
-      
-      Object.entries(params).forEach(([key, value]) => {
-        if (value !== null && value !== undefined && value !== '') {
-          queryParams.append(key, value);
-        }
-      });
-
-      const response = await api.get(`/api/products/related/${productId}?${queryParams.toString()}`);
-      return {
-        success: true,
-        data: response.data.data?.products || []
-      };
-    } catch (error) {
-      return {
-        success: false,
-        error: error.response?.data?.error?.message || 'Failed to fetch related products',
         status: error.response?.status
       };
     }

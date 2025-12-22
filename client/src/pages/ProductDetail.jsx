@@ -383,7 +383,6 @@ const ProductDetail = () => {
           productId={product._id}
           category={product.category}
           brand={product.brand}
-          compatibility={product.compatibility}
         />
       </div>
     </div>

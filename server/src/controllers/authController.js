@@ -88,9 +88,12 @@ const register = async (req, res, next) => {
 // @access  Public
 const login = async (req, res, next) => {
   try {
+    console.log('Login attempt - Request body:', req.body);
+    
     // Validate request body
     const { error, value } = userLoginSchema.validate(req.body);
     if (error) {
+      console.log('Validation error:', error.details);
       return res.status(400).json({
         success: false,
         error: {
@@ -105,6 +108,7 @@ const login = async (req, res, next) => {
     }
 
     const { email, password } = value;
+    console.log('Validated credentials:', { email, password: '***' });
 
     // Check for user and include password field
     const user = await User.findOne({ 
@@ -112,7 +116,18 @@ const login = async (req, res, next) => {
       isActive: true 
     }).select('+password');
 
+    console.log('User found:', user ? 'Yes' : 'No');
+    if (user) {
+      console.log('User details:', { 
+        id: user._id, 
+        email: user.email, 
+        isActive: user.isActive,
+        hasPassword: !!user.password 
+      });
+    }
+
     if (!user) {
+      console.log('User not found for email:', email.toLowerCase());
       return res.status(401).json({
         success: false,
         error: {
@@ -124,8 +139,12 @@ const login = async (req, res, next) => {
     }
 
     // Check password
+    console.log('Comparing password...');
     const isPasswordValid = await user.comparePassword(password);
+    console.log('Password valid:', isPasswordValid);
+    
     if (!isPasswordValid) {
+      console.log('Password comparison failed');
       return res.status(401).json({
         success: false,
         error: {
