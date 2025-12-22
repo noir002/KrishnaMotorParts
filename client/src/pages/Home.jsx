@@ -213,7 +213,12 @@ const Home = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {services.map((svc, idx) => (
                   <div key={idx} className="neu-flat p-8 hover:bg-[#fafafa] dark:hover:bg-white/10 transition-colors group">
-                    <div className={`size-14 rounded-2xl neu-pressed flex items-center justify-center mb-6 text-${svc.color} group-hover:scale-110 transition-all dark:bg-white/5 dark:shadow-none dark:border dark:border-white/10`}>
+                    <div className={`size-14 rounded-2xl neu-pressed flex items-center justify-center mb-6 group-hover:scale-110 transition-all dark:bg-white/5 dark:shadow-none dark:border dark:border-white/10 ${
+                    svc.color === 'primary' ? 'text-primary' :
+                    svc.color === 'secondary-green' ? 'text-secondary-green' :
+                    svc.color === 'blue-500' ? 'text-blue-500' :
+                    svc.color === 'yellow-500' ? 'text-yellow-500' : 'text-primary'
+                  }`}>
                       <span className="material-symbols-outlined text-3xl">{svc.icon}</span>
                     </div>
                     <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-3 transition-colors">{svc.title}</h3>
