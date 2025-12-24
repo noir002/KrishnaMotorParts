@@ -20,7 +20,8 @@ app.use(cors({
     'http://localhost:3000',
     'http://localhost:3001',
     'http://localhost:5173',
-    'https://krishna-motor-parts-noir002s-projects.vercel.app'
+    'https://krishna-motor-parts-noir002s-projects.vercel.app',
+    'https://krishna-motor-parts.vercel.app'
   ],
   credentials: true
 }));

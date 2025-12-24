@@ -14,7 +14,7 @@ services:
       - key: MONGODB_URI
         value: "mongodb+srv://paraschauhan:Paras%401234@krishnamotorparts.6qljhwh.mongodb.net/automobile_ecommerce?retryWrites=true&w=majority&appName=KrishnaMotorParts"
       - key: CLIENT_URL
-        value: https://krishna-motor-parts-noir002s-projects.vercel.app
+        value: https://krishna-motor-parts.vercel.app
       - key: JWT_SECRET
         value: automobile_ecommerce_jwt_secret_key_2024_production_secure
       - key: JWT_EXPIRE
