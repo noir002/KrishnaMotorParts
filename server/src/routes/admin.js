@@ -16,6 +16,12 @@ const {
   exportProductsData
 } = require('../controllers/adminController');
 
+const {
+  getAbandonedCartStats,
+  getAbandonedCarts,
+  getConversionMetrics
+} = require('../controllers/adminAbandonedCartController');
+
 const router = express.Router();
 
 // Apply authentication and admin authorization to all routes
@@ -42,5 +48,10 @@ router.put('/orders/:orderId/status', updateOrderStatus);
 // Data Export Routes
 router.get('/export/orders', exportOrdersData);
 router.get('/export/products', exportProductsData);
+
+// Abandoned Cart Analytics Routes
+router.get('/abandoned-carts/stats', getAbandonedCartStats);
+router.get('/abandoned-carts', getAbandonedCarts);
+router.get('/abandoned-carts/conversions', getConversionMetrics);
 
 module.exports = router;

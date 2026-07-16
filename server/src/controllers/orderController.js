@@ -123,6 +123,11 @@ const createOrder = async (req, res, next) => {
       await cacheService.invalidateProduct(product._id);
     }
 
+    // Record conversion if cart had abandoned cart notifications sent
+    if (cart.abandonmentTracking.notificationsSent > 0) {
+      await cart.recordConversion(cart.abandonmentTracking.notificationsSent);
+    }
+
     // Clear cart after successful order
     await cart.clearCart();
 

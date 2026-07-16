@@ -106,6 +106,15 @@ const userSchema = new mongoose.Schema({
   phoneVerified: {
     type: Boolean,
     default: false
+  },
+  notificationPreferences: {
+    abandonedCartEmails: {
+      type: Boolean,
+      default: true
+    },
+    optOutDate: {
+      type: Date
+    }
   }
 }, {
   timestamps: true,

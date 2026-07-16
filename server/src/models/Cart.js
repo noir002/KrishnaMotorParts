@@ -38,6 +38,49 @@ const cartSchema = new mongoose.Schema({
     type: Number,
     default: 0,
     min: 0
+  },
+  abandonmentTracking: {
+    isAbandoned: {
+      type: Boolean,
+      default: false,
+      index: true
+    },
+    abandonedAt: {
+      type: Date,
+      index: true
+    },
+    notificationsSent: {
+      type: Number,
+      default: 0,
+      min: 0,
+      max: 3
+    },
+    lastNotificationSent: {
+      type: Date
+    },
+    notificationTimestamps: [{
+      type: Date
+    }],
+    convertedAfterNotification: {
+      type: Boolean,
+      default: false
+    },
+    conversionTimestamp: {
+      type: Date
+    },
+    conversionReminderNumber: {
+      type: Number,
+      min: 1,
+      max: 3
+    },
+    timeToConversion: {
+      type: Number
+    }
+  },
+  lastModifiedAt: {
+    type: Date,
+    default: Date.now,
+    index: true
   }
 }, {
   timestamps: true,
@@ -49,6 +92,13 @@ const cartSchema = new mongoose.Schema({
 cartSchema.index({ userId: 1 }, { unique: true });
 cartSchema.index({ 'items.productId': 1 });
 cartSchema.index({ updatedAt: -1 });
+
+// Compound index for efficient abandoned cart queries
+cartSchema.index({ 
+  'abandonmentTracking.isAbandoned': 1, 
+  'abandonmentTracking.notificationsSent': 1,
+  'lastModifiedAt': -1 
+});
 
 // Virtual for cart item count
 cartSchema.virtual('itemCount').get(function() {
@@ -63,6 +113,9 @@ cartSchema.virtual('isEmpty').get(function() {
 // Pre-save middleware to calculate totals
 cartSchema.pre('save', async function(next) {
   if (this.isModified('items')) {
+    // Update lastModifiedAt timestamp
+    this.lastModifiedAt = new Date();
+    
     // Calculate total items
     this.totalItems = this.items.reduce((sum, item) => sum + item.quantity, 0);
     
@@ -153,6 +206,67 @@ cartSchema.methods.getPopulatedCart = function() {
     select: 'name price discountPrice images stock brand partNumber',
     match: { isActive: true }
   });
+};
+
+// Instance method to mark cart as abandoned
+cartSchema.methods.markAsAbandoned = async function() {
+  try {
+    this.abandonmentTracking.isAbandoned = true;
+    this.abandonmentTracking.abandonedAt = new Date();
+    return await this.save();
+  } catch (error) {
+    console.error('[Cart] Database error marking cart as abandoned:', {
+      cartId: this._id,
+      error: error.message,
+      stack: error.stack
+    });
+    throw error;
+  }
+};
+
+// Instance method to record notification sent
+cartSchema.methods.recordNotificationSent = async function() {
+  try {
+    const now = new Date();
+    this.abandonmentTracking.notificationsSent += 1;
+    this.abandonmentTracking.lastNotificationSent = now;
+    this.abandonmentTracking.notificationTimestamps.push(now);
+    return await this.save();
+  } catch (error) {
+    console.error('[Cart] Database error recording notification sent:', {
+      cartId: this._id,
+      error: error.message,
+      stack: error.stack
+    });
+    throw error;
+  }
+};
+
+// Instance method to record conversion
+cartSchema.methods.recordConversion = async function(reminderNumber) {
+  try {
+    const now = new Date();
+    this.abandonmentTracking.convertedAfterNotification = true;
+    this.abandonmentTracking.conversionReminderNumber = reminderNumber;
+    this.abandonmentTracking.conversionTimestamp = now;
+    
+    // Calculate time elapsed since last notification
+    if (this.abandonmentTracking.lastNotificationSent) {
+      const timeElapsed = now - this.abandonmentTracking.lastNotificationSent;
+      // Store time elapsed in milliseconds for later analysis
+      this.abandonmentTracking.timeToConversion = timeElapsed;
+    }
+    
+    return await this.save();
+  } catch (error) {
+    console.error('[Cart] Database error recording conversion:', {
+      cartId: this._id,
+      reminderNumber,
+      error: error.message,
+      stack: error.stack
+    });
+    throw error;
+  }
 };
 
 // Static method to find or create cart for user

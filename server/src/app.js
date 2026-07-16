@@ -80,6 +80,8 @@ app.use('/api/cart', require('./routes/cart'));
 app.use('/api/orders', require('./routes/orders'));
 app.use('/api/admin', require('./routes/admin'));
 app.use('/api/newsletter', require('./routes/newsletter'));
+app.use('/api/notification-preferences', require('./routes/notificationPreferences'));
+app.use('/api', require('./routes/notificationPreferences')); // For /api/unsubscribe/abandoned-cart
 
 // Error handling middleware (must be last)
 app.use(errorHandler);

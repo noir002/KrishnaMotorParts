@@ -68,7 +68,6 @@ Krishna Motor Parts is a comprehensive ecommerce platform designed specifically 
 - **Rate Limiting**: Protection against abuse and spam
 - **Email Integration**: Automated email notifications
 - **Real-time Communication**: WebSocket support for live updates
-- **Performance Monitoring**: Built-in performance tracking
 - **Error Handling**: Comprehensive error management
 - **Security**: Helmet.js, CORS, and input validation
 
@@ -137,7 +136,8 @@ npm run dev
 ### 4. Database Setup
 ```bash
 cd ../server
-# Seed the database with sample data
+# Seed the database with sample data (creates local dev accounts —
+# see server/seed.js to set or change the seeded credentials)
 node seed.js
 ```
 
@@ -222,6 +222,8 @@ VITE_API_URL=http://localhost:5001
 VITE_APP_NAME=Krishna Motor Parts
 VITE_APP_VERSION=1.0.0
 ```
+
+> ⚠️ Never commit a populated `.env` file. `JWT_SECRET`, email credentials, and any real API keys should stay out of version control — use `.env.example` with placeholder values only, as shown above.
 
 ---
 
@@ -330,16 +332,16 @@ npm test
 npm run lint
 ```
 
-### Test Accounts
-```
-Admin Account:
-Email: krishnamotorparts1993@gmail.com
-Password: admin123
+### Local Development Accounts
+Running `node seed.js` populates the local/dev database with a sample admin
+account and a sample customer account so you can exercise both role-based
+flows end to end.
 
-Customer Account:
-Email: chauhanparas7500@gmail.com
-Password: Paras@1234
-```
+- Credentials are defined in `server/seed.js` — open that file to see or
+  change them before seeding.
+- These are **local development fixtures only**. They are not present in
+  the production database, and no real credentials are committed to this
+  repository.
 
 ---
 
@@ -374,12 +376,18 @@ We welcome contributions! Please follow these steps:
 
 ## 📊 Performance & Monitoring
 
-### Key Metrics
-- **Response Time**: < 200ms average
-- **Uptime**: 99.9% availability
-- **Database**: Optimized queries with indexing
-- **Caching**: Redis integration ready
-- **Security**: Rate limiting and input validation
+> The figures below are targets this project is designed around, not
+> numbers from a live monitoring dashboard. Swap this section for real
+> data (e.g. Render/Vercel analytics, a logging service, or an uptime
+> monitor) once you have measurements to report.
+
+### Design Targets
+- **Response Time**: sub-200ms goal for typical API calls, aided by indexed
+  MongoDB queries
+- **Availability**: designed for high uptime on Render/Vercel's managed
+  infrastructure
+- **Caching**: Redis integration planned, not yet implemented
+- **Security**: rate limiting and input validation enabled on all routes
 
 ### Monitoring Tools
 - Health check endpoint: `/health`
