@@ -1,4 +1,4 @@
-// Script to fix LED bulb image in production database
+
 const mongoose = require('mongoose');
 
 // Use your production MongoDB Atlas connection string
